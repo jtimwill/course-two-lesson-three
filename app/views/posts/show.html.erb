@@ -29,9 +29,7 @@
 <h5>Comments:</h5>
 
 <% @post.comments.select do |comment| %>
-  <% if comment.valid? %>
     <%= render 'comments/comment', comment: comment %>
-  <% end %>
 <% end %>
 
 
