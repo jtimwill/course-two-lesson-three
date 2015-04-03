@@ -28,8 +28,10 @@
 
 <h5>Comments:</h5>
 
-<% @post.comments.each do |comment| %>
-  <%= render 'comments/comment', comment: comment %>
+<% @post.comments.select do |comment| %>
+  <% if comment.valid? %>
+    <%= render 'comments/comment', comment: comment %>
+  <% end %>
 <% end %>
 
 
